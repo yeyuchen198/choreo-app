@@ -2,6 +2,8 @@
 # FROM yuchen168/uwsgi-nginx-unprivileged
 FROM yuchen168/uwsgi-nginx-unprivileged-python
 
+USER 10014
+
 COPY nginx.conf /etc/nginx/nginx.conf
 COPY app.json /etc/uwsgi/app.json
 
