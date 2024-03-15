@@ -2,6 +2,8 @@
 # FROM yuchen168/uwsgi-nginx-unprivileged
 FROM yuchen168/uwsgi-nginx-unprivileged-python
 
+RUN chown user:user /app.sh
+
 USER 10014
 
 COPY nginx.conf /etc/nginx/nginx.conf
