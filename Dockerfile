@@ -2,9 +2,9 @@
 # FROM yuchen168/uwsgi-nginx-unprivileged
 FROM yuchen168/uwsgi-nginx-unprivileged-python
 
-RUN chown user:user /app.sh
-
 USER 10014
+RUN adduser -u 10014 -d /home/user user
+RUN chown -R user:user /home/user
 
 COPY nginx.conf /etc/nginx/nginx.conf
 COPY app.json /etc/uwsgi/app.json
