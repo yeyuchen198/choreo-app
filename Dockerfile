@@ -3,8 +3,8 @@
 FROM yuchen168/uwsgi-nginx-unprivileged-python
 
 USER 10014
-RUN adduser -u 10014 -d /home/user user
-RUN chown -R user:user /home/user
+# RUN adduser -u 10014 -d /home/user user
+# RUN chown -R user:user /home/user
 
 COPY nginx.conf /etc/nginx/nginx.conf
 COPY app.json /etc/uwsgi/app.json
@@ -26,6 +26,6 @@ EXPOSE 7860
 # CMD ["nginx", "-g", "daemon off;"]
 # nginx -g 'daemon off;'
 
-ADD app.sh /
-RUN chmod +x /app.sh
+# ADD app.sh /
+# RUN chmod +x /app.sh
 CMD /app.sh
